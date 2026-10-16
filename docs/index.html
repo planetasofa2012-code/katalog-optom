@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Трикотаж оптом — каталог</title>
+  <meta name="description" content="Каталог футболок и трикотажа: все модели, размеры, остатки и цены. Чем больше заказ — тем ниже цена.">
+  <meta name="theme-color" content="#c2410c">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top__row">
+      <div>
+        <h1 class="top__title" id="shopName">Трикотаж оптом</h1>
+        <p class="top__tag" id="shopTag"></p>
+      </div>
+      <button class="iconbtn" id="btnPlaces" aria-label="Где нас найти">📍</button>
+    </div>
+    <div class="ladder-banner">
+      <strong>Чем больше заказ — тем ниже цена.</strong>
+      <span>Без регистрации: цена пересчитывается сама в корзине.</span>
+    </div>
+    <nav class="chips" id="categories" aria-label="Категории"></nav>
+    <div class="filters">
+      <label>Размер
+        <select id="sizeFilter"><option value="">любой</option></select>
+      </label>
+      <label class="check"><input type="checkbox" id="stockOnly" checked> только в наличии</label>
+    </div>
+  </header>
+
+  <main id="grid" class="grid" aria-live="polite"></main>
+
+  <section class="actions-bottom">
+    <button class="btn btn--ghost" id="btnCallback">📞 Позвоните мне</button>
+    <a class="btn btn--wa" id="btnWa" target="_blank" rel="noopener">WhatsApp</a>
+    <button class="btn btn--ghost" id="btnInstall" hidden>⬇ Установить на телефон</button>
+  </section>
+
+  <footer class="foot">
+    <a href="privacy.html">Политика обработки персональных данных</a> ·
+    <a href="#admin" id="lnkAdmin">Для продавца: заявки</a>
+    <p class="muted">Демо-версия: товары и цены выдуманы для примера.</p>
+  </footer>
+
+  <!-- Плавающая панель корзины -->
+  <button class="cartbar" id="cartbar" hidden>
+    <span>🛒 <b id="cartCount">0</b> шт</span>
+    <span id="cartSum">0 ₽</span>
+    <span class="cartbar__go">Корзина →</span>
+  </button>
+
+  <!-- Нижний лист (универсальный) -->
+  <div class="sheet" id="sheet" hidden>
+    <div class="sheet__backdrop" data-close></div>
+    <div class="sheet__panel" role="dialog" aria-modal="true">
+      <button class="sheet__close" data-close aria-label="Закрыть">✕</button>
+      <div id="sheetBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
